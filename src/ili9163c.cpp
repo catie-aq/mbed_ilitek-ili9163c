@@ -32,6 +32,10 @@ void ILI9163C::init()
 	exit_sleep();
 	ThisThread::sleep_for(5ms);
 
+	write_command(CMD_PIXFMT);//Set Color Format 16bit
+	write_data(0x05);
+	ThisThread::sleep_for(5ms);
+
 	write_command(CMD_DISPON);//display ON 
 	ThisThread::sleep_for(1ms);
 }
