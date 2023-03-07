@@ -1,5 +1,2 @@
 # ILITEK ILI9163C
-
-A short description of the project
-
-<!-- Describe `ILI9163C` library here -->
+Ilitek ILI9163C display controller driver for Mbed OS.
