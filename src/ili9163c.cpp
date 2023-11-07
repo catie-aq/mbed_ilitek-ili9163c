@@ -22,6 +22,7 @@ namespace sixtron {
 
 ILI9163C::ILI9163C(SPI *spi, PinName cs, PinName dcx, PinName backlight):ILI9XXX(spi, cs, dcx, backlight)
 {
+	spi->frequency(24000000);
 }
 
 void ILI9163C::init()
