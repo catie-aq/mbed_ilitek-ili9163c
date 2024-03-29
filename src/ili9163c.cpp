@@ -19,26 +19,26 @@
 
 namespace sixtron {
 
-
-ILI9163C::ILI9163C(SPI *spi, PinName cs, PinName dcx, PinName backlight):ILI9XXX(spi, cs, dcx, backlight)
+ILI9163C::ILI9163C(SPI *spi, PinName cs, PinName dcx, PinName backlight):
+        ILI9XXX(spi, cs, dcx, backlight)
 {
-	spi->frequency(24000000);
+    spi->frequency(24000000);
 }
 
 void ILI9163C::init()
 {
-	write_command(CMD_SWRESET);
-	ThisThread::sleep_for(500ms);
+    write_command(CMD_SWRESET);
+    ThisThread::sleep_for(500ms);
 
-	exit_sleep();
-	ThisThread::sleep_for(5ms);
+    exit_sleep();
+    ThisThread::sleep_for(5ms);
 
-	write_command(CMD_PIXFMT);//Set Color Format 16bit
-	write_data(0x05);
-	ThisThread::sleep_for(5ms);
+    write_command(CMD_PIXFMT); // Set Color Format 16bit
+    write_data(0x05);
+    ThisThread::sleep_for(5ms);
 
-	write_command(CMD_DISPON);//display ON 
-	ThisThread::sleep_for(1ms);
+    write_command(CMD_DISPON); // display ON
+    ThisThread::sleep_for(1ms);
 }
 
 } // namespace sixtron
